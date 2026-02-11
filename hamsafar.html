@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mehar ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:black;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* 🌌 Star Background */
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation:moveStars 80s linear infinite;
+  z-index:0;
+}
+
+@keyframes moveStars{
+  from{background-position:0 0;}
+  to{background-position:10000px 5000px;}
+}
+
+.container{
+  position:relative;
+  z-index:2;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px 20px;
+}
+
+/* Title */
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(40px, 8vw, 70px);
+  color:#ff6ec7;
+  text-shadow:0 0 20px #ff6ec7;
+  animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px #ff6ec7;}
+  to{text-shadow:0 0 30px #ff1493;}
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:clamp(14px,3vw,18px);
+  opacity:0.9;
+}
+
+/* Gift */
+.gift{
+  font-size:clamp(60px,12vw,100px);
+  margin-top:30px;
+  cursor:pointer;
+  transition:0.5s;
+}
+
+.gift:hover{
+  transform:scale(1.2) rotate(10deg);
+}
+
+/* Hidden Content */
+.hidden{
+  display:none;
+  margin-top:40px;
+  animation:fadeIn 2s ease;
+  width:100%;
+  max-width:900px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* Slideshow */
+.slideshow{
+  width:100%;
+  max-width:300px;
+  height:300px;
+  margin:auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 0 25px pink;
+}
+
+.slideshow img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Letter */
+.letter{
+  margin-top:30px;
+  font-size:clamp(15px,3vw,18px);
+  line-height:1.8;
+  padding:0 10px;
+}
+
+/* Timeline */
+.timeline{
+  margin-top:30px;
+  font-size:clamp(14px,2.8vw,16px);
+  opacity:0.9;
+}
+
+/* Proposal */
+.proposal{
+  margin-top:30px;
+  font-size:clamp(18px,4vw,26px);
+  color:#ff69b4;
+  font-weight:500;
+}
+
+/* Button */
+button{
+  margin-top:20px;
+  padding:10px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff1493;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#ff69b4;
+}
+
+/* Floating Hearts */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  color:#ff1493;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-110vh);opacity:0;}
+}
+
+/* Tablet adjustments */
+@media (min-width:600px){
+  .slideshow{
+    max-width:350px;
+    height:350px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width:992px){
+  .slideshow{
+    max-width:400px;
+    height:400px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+  <h1>Happy Birthday Mehar ❤️</h1>
+  <p class="subtitle">Tonight the universe celebrates you ✨</p>
+
+  <div class="gift" onclick="openSurprise()">🎁</div>
+
+  <div class="hidden" id="surprise">
+
+    <div class="slideshow">
+      <img id="slide" src="photo1.jpg">
+    </div>
+
+    <div class="letter">
+      <p>
+        My Beautiful Mehar,  
+        From the day you entered my life, everything changed.  
+        You became my peace in chaos, my smile in sadness,
+        and my strength when I feel weak.
+      </p>
+      <p>
+        Loving you is not just a feeling —  
+        it is my favorite reality.
+        Every heartbeat of mine whispers your name.
+      </p>
+      <p>
+        On your special day, I promise to cherish you,
+        protect your heart,
+        and love you more deeply with every sunrise.
+      </p>
+    </div>
+
+    <div class="timeline">
+      💕 The Day We Met – The start of something magical  
+      <br>🌹 Our First Memory – A moment I treasure forever  
+      <br>✨ Today – Celebrating the most precious soul in my life  
+    </div>
+
+    <div class="proposal">
+      Mehar… will you stay with me forever? 💍❤️
+    </div>
+
+    <button onclick="celebrate()">Celebrate 🎆</button>
+  </div>
+</div>
+
+<audio id="music" loop>
+  <source src="your-song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openSurprise(){
+  document.getElementById("surprise").style.display="block";
+  document.getElementById("music").play();
+
+  for(let i=0;i<25;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+  }
+}
+
+/* Slideshow */
+let images=["baby.jpeg","baby2.jpeg"];
+let index=0;
+setInterval(()=>{
+  index=(index+1)%images.length;
+  document.getElementById("slide").src=images[index];
+},3000);
+
+function celebrate(){
+  alert("Happy Birthday My Love ❤️✨");
+}
+</script>
+
+</body>
+</html>
